@@ -39,10 +39,10 @@
     const/4 v9, 0x0
 
     .line 104
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 106
-    const-string v6, "EXTERNAL_STORAGE"
+    const-string v6, "EXTERNAL_STORAGE_SD"
 
     invoke-static {v6}, Ljava/lang/System;->getenv(Ljava/lang/String;)Ljava/lang/String;
 
@@ -50,7 +50,7 @@
 
     .line 107
     .local v3, "rawExternalStorage":Ljava/lang/String;
-    const-string v6, "EMULATED_STORAGE_TARGET"
+    const-string v6, "EXTERNAL_STORAGE_SD"
 
     invoke-static {v6}, Ljava/lang/System;->getenv(Ljava/lang/String;)Ljava/lang/String;
 
@@ -58,7 +58,7 @@
 
     .line 108
     .local v2, "rawEmulatedStorageTarget":Ljava/lang/String;
-    const-string v6, "MEDIA_STORAGE"
+    const-string v6, "EXTERNAL_STORAGE_SD"
 
     invoke-static {v6}, Ljava/lang/System;->getenv(Ljava/lang/String;)Ljava/lang/String;
 
@@ -84,9 +84,7 @@
     if-nez v6, :cond_1
 
     .line 116
-    invoke-static {p1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
-
-    move-result-object v5
+    const-string v5, "Internal"
 
     .line 117
     .local v5, "rawUserId":Ljava/lang/String;
