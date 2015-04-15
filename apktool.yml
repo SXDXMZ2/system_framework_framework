@@ -1,0 +1,4 @@
+version: 2.0.0-RC4
+apkFileName: framework-us.jar
+unknownFiles:
+  preloaded-classes: '0'
